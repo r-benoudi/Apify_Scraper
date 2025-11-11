@@ -54,6 +54,126 @@
                 </div>
             </a>
         </div>
+
+
+        <br><br>
+        <!-- Main Content -->
+        <main class="flex-1">
+
+
+            <h1>Films :</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                {% for item in items1 %}
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Thumbnail Placeholder -->
+                    <div class="bg-gradient-to-br from-gray-200 to-gray-300 h-64 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    
+                    <!-- Card Content -->
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1 truncate" title="{{ item.title }}">{{ item.title }}</h3>
+                        <p class="text-gray-600 mb-3">{{ item.year or 'Year Unknown' }}</p>
+                        
+                        <!-- Additional Info -->
+                        <div class="text-sm text-gray-500 mb-3 space-y-1">
+                            {% if item.genre %}<p><span class="font-medium">Genre:</span> {{ item.genre }}</p>{% endif %}
+                            {% if item.director %}<p><span class="font-medium">Director:</span> {{ item.director }}</p>{% endif %}
+                            {% if item.rating %}<p><span class="font-medium">Rating:</span> {{ item.rating }}/10</p>{% endif %}
+                        </div>
+                        
+                        
+                    </div>
+
+                </div>
+                {% endfor %}
+
+            </div>
+            <br>
+
+            <h1>Manga :</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                {% for item in items2 %}
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Thumbnail Placeholder -->
+                    <div class="bg-gradient-to-br from-gray-200 to-gray-300 h-64 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    
+                    <!-- Card Content -->
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1 truncate" title="{{ item.title }}">{{ item.title }}</h3>
+                        <p class="text-gray-600 mb-3">{{ item.year or 'Year Unknown' }}</p>
+                        
+                        <!-- Additional Info -->
+                        <div class="text-sm text-gray-500 mb-3 space-y-1">
+
+                            {% if item.author %}<p><span class="font-medium">Author:</span> {{ item.author }}</p>{% endif %}
+                            {% if item.volumes %}<p><span class="font-medium">Volumes:</span> {{ item.volumes }}</p>{% endif %}
+                            {% if item.status %}<p><span class="font-medium">Status:</span> {{ item.status }}</p>{% endif %}
+
+                        </div>
+                        
+                        
+                    </div>
+
+                </div>
+                {% endfor %}
+
+            </div>
+            <br>
+
+            <h2>Anime :</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                {% for item in items3 %}
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Thumbnail Placeholder -->
+                    <div class="bg-gradient-to-br from-gray-200 to-gray-300 h-64 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    
+                    <!-- Card Content -->
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1 truncate" title="{{ item.title }}">{{ item.title }}</h3>
+                        <p class="text-gray-600 mb-3">{{ item.year or 'Year Unknown' }}</p>
+                        
+                        <!-- Additional Info -->
+                        <div class="text-sm text-gray-500 mb-3 space-y-1">
+                            {% if item.studio %}<p><span class="font-medium">Studio:</span> {{ item.studio }}</p>{% endif %}
+                            {% if item.episodes %}<p><span class="font-medium">Episodes:</span> {{ item.episodes }}</p>{% endif %}
+                            {% if item.status %}<p><span class="font-medium">Status:</span> {{ item.status }}</p>{% endif %}
+                        </div>
+                        
+                        
+                    </div>
+
+                </div>
+                {% endfor %}
+
+            </div>
+            <br>
+
+
+        </main>
+
+
+
     </div>
+
+
+
+
+
+
+    
 </body>
 </html>

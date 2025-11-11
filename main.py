@@ -45,7 +45,48 @@ with app.app_context():
 # Routes
 @app.route('/')
 def index():
-    return render_template('index.html')
+
+    F = Movie.query.all()
+    M = Manga.query.all()
+    A = Anime.query.all()
+    items1 = [
+    {
+        "id": m.id,
+        "title": m.title,
+        "year": m.year,
+        "genre": m.genre,
+        "director": m.director,
+        "rating": m.rating
+    }
+    for m in F
+    ]
+    items2 = [
+    {
+        "id": m.id,
+        "title": m.title,
+        "year": m.year,
+        "author": m.author,
+        "volumes": m.volumes,
+        "status": m.status
+    }
+    for m in M
+    ]
+    items3 = [
+    {
+        "id": m.id,
+        "title": m.title,
+        "year": m.year,
+        "studio": m.studio,
+        "episodes": m.episodes,
+        "status": m.status
+    }
+    for m in A
+    ]
+    
+    return render_template('index.html', items1=items1, items2=items2, items3=items3)
+
+
+
 
 # Movies Routes
 @app.route('/movies')
