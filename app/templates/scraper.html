@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Scraper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        
+        .btn-info {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .btn-info:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            min-width: 150px;
+        }
+        
+        .stat-card h3 {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card p {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .alert-success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+        
+        .alert-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+        
+        .alert-info {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #3b82f6;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .manga-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .manga-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .manga-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .manga-card p {
+            color: #666;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .manga-card .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .status.ongoing {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .status.completed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .search-box {
+            padding: 12px 20px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 300px;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Manga Scraper - Manga Spark</h1>
+            
+            <div class="controls">
+                <button class="btn btn-primary" onclick="startScraping()" id="scrapeBtn">
+                    <span>▶️</span> Démarrer le Scraping
+                </button>
+                <button class="btn btn-success" onclick="loadScraped()" id="loadBtn">
+                    <span>📂</span> Charger depuis Excel
+                </button>
+                <button class="btn btn-info" onclick="downloadExcel()">
+                    <span>⬇️</span> Télécharger Excel
+                </button>
+                <button class="btn btn-info" onclick="importToDatabase()">
+                    <span>💾</span> Importer en Base
+                </button>
+                
+                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Rechercher un manga..." onkeyup="filterMangas()">
+            </div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Total Mangas</h3>
+                    <p id="totalCount">{{ total }}</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Affichés</h3>
+                    <p id="displayCount">{{ total }}</p>
+                </div>
+            </div>
+            
+            <div class="alert alert-success" id="successAlert"></div>
+            <div class="alert alert-error" id="errorAlert"></div>
+            <div class="alert alert-info" id="infoAlert"></div>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Scraping en cours... Cela peut prendre plusieurs minutes.</p>
+            </div>
+        </div>
+        
+        <div class="cards-grid" id="mangaCards">
+            {% for manga in mangas %}
+            <div class="manga-card" data-title="{{ manga.title|lower }}">
+                <h3>{{ manga.title }}</h3>
+                <p><strong>⭐ Rating:</strong> {{ manga.rating }}</p>
+                <p><strong>🔗 Lien:</strong> <a href="{{ manga.link }}" target="_blank" style="color: #667eea;">Voir</a></p>
+                <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee;">
+                    <p style="font-size: 13px;"><strong>📖 {{ manga.chapter1_title }}</strong></p>
+                    <p style="font-size: 12px; color: #888;">{{ manga.chapter1_date }}</p>
+                    {% if manga.chapter2_title and manga.chapter2_title != 'N/A' %}
+                    <p style="font-size: 13px; margin-top: 5px;"><strong>📖 {{ manga.chapter2_title }}</strong></p>
+                    <p style="font-size: 12px; color: #888;">{{ manga.chapter2_date }}</p>
+                    {% endif %}
+                </div>
+                <span class="status ongoing" style="margin-top: 10px;">
+                    Page {{ manga.page }}
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <script>
+        function showAlert(type, message) {
+            const alerts = ['successAlert', 'errorAlert', 'infoAlert'];
+            alerts.forEach(id => {
+                document.getElementById(id).style.display = 'none';
+            });
+            
+            const alertId = type + 'Alert';
+            const alert = document.getElementById(alertId);
+            alert.textContent = message;
+            alert.style.display = 'block';
+            
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 5000);
+        }
+        
+        async function startScraping() {
+            const btn = document.getElementById('scrapeBtn');
+            const loading = document.getElementById('loading');
+            
+            btn.disabled = true;
+            loading.style.display = 'block';
+            showAlert('info', 'Démarrage du scraping...');
+            
+            try {
+                const response = await fetch('/scraper/start', {
+                    method: 'POST'
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showAlert('success', data.message);
+                    setTimeout(() => loadScraped(), 1000);
+                } else {
+                    showAlert('error', data.message);
+                }
+            } catch (error) {
+                showAlert('error', 'Erreur: ' + error.message);
+            } finally {
+                btn.disabled = false;
+                loading.style.display = 'none';
+            }
+        }
+        
+        async function loadScraped() {
+            const btn = document.getElementById('loadBtn');
+            btn.disabled = true;
+            
+            try {
+                const response = await fetch('/scraper/load');
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayMangas(data.mangas);
+                    document.getElementById('totalCount').textContent = data.total;
+                    document.getElementById('displayCount').textContent = data.total;
+                    showAlert('success', `${data.total} mangas chargés`);
+                } else {
+                    showAlert('error', data.message);
+                }
+            } catch (error) {
+                showAlert('error', 'Erreur: ' + error.message);
+            } finally {
+                btn.disabled = false;
+            }
+        }
+        
+        function displayMangas(mangas) {
+            const container = document.getElementById('mangaCards');
+            container.innerHTML = '';
+            
+            mangas.forEach(manga => {
+                const card = document.createElement('div');
+                card.className = 'manga-card';
+                card.setAttribute('data-title', manga.title.toLowerCase());
+                
+                card.innerHTML = `
+                    <h3>${manga.title}</h3>
+                    <p><strong>⭐ Rating:</strong> ${manga.rating || 'N/A'}</p>
+                    <p><strong>🔗 Lien:</strong> <a href="${manga.link}" target="_blank" style="color: #667eea;">Voir</a></p>
+                    <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee;">
+                        <p style="font-size: 13px;"><strong>📖 ${manga.chapter1_title || 'N/A'}</strong></p>
+                        <p style="font-size: 12px; color: #888;">${manga.chapter1_date || 'N/A'}</p>
+                        ${manga.chapter2_title && manga.chapter2_title !== 'N/A' ? `
+                        <p style="font-size: 13px; margin-top: 5px;"><strong>📖 ${manga.chapter2_title}</strong></p>
+                        <p style="font-size: 12px; color: #888;">${manga.chapter2_date}</p>
+                        ` : ''}
+                    </div>
+                    <span class="status ongoing" style="margin-top: 10px;">
+                        Page ${manga.page}
+                    </span>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+        
+        function filterMangas() {
+            const search = document.getElementById('searchBox').value.toLowerCase();
+            const cards = document.querySelectorAll('.manga-card');
+            let visibleCount = 0;
+            
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title');
+                
+                if (title.includes(search)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            document.getElementById('displayCount').textContent = visibleCount;
+        }
+        
+        function downloadExcel() {
+            window.location.href = '/scraper/download';
+        }
+        
+        async function importToDatabase() {
+            if (!confirm('Voulez-vous importer les mangas scrapés dans votre base de données?')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch('/scraper/import-to-db', {
+                    method: 'POST'
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showAlert('success', data.message);
+                } else {
+                    showAlert('error', data.message);
+                }
+            } catch (error) {
+                showAlert('error', 'Erreur: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>

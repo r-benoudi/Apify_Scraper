@@ -17,11 +17,14 @@ def create_app():
     from app.blueprints.movies import movies_bp
     from app.blueprints.mangas import mangas_bp
     from app.blueprints.anime import anime_bp
-    
+    from app.blueprints.scraper import scraper_bp  # NOUVEAU
+
     app.register_blueprint(main_bp)
     app.register_blueprint(movies_bp, url_prefix='/movies')
     app.register_blueprint(mangas_bp, url_prefix='/mangas')
     app.register_blueprint(anime_bp, url_prefix='/anime')
+    app.register_blueprint(scraper_bp)  # NOUVEAU , url_prefix='/scraper'
+
     
     # Create tables
     with app.app_context():
