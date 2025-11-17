@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ manga.title }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .manga-header {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .manga-top {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .manga-poster {
+            flex-shrink: 0;
+        }
+        
+        .manga-poster img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .manga-info {
+            flex: 1;
+        }
+        
+        .manga-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .rating-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .rating-score {
+            font-size: 48px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stars {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .star {
+            color: #ffd700;
+            font-size: 32px;
+        }
+        
+        .rating-details {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .info-value {
+            color: #333;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .status-ongoing {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .status-completed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .tag {
+            background: #f3f4f6;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+        
+        .story-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title::before {
+            content: '⭐';
+            font-size: 28px;
+        }
+        
+        .story-content {
+            color: #333;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        .show-more {
+            color: #667eea;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        .chapters-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .chapters-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .chapter-item:hover {
+            background: #f3f4f6;
+            transform: translateX(-5px);
+        }
+        
+        .chapter-title {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .chapter-date {
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .bookmark-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            font-size: 24px;
+            transition: all 0.3s;
+        }
+        
+        .bookmark-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .manga-top {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .manga-poster img {
+                width: 250px;
+                height: 350px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+        <!-- navbar -->
+    <nav class="bg-white shadow-md mb-8">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-2xl font-bold text-gray-800 hover:text-blue-600">Media Manager</a>
+                <div class="flex space-x-4">
+                    <a href="/movies" class="text-gray-600 hover:text-blue-600 font-medium">Movies</a>
+                    <a href="/mangas" class="text-gray-600 hover:text-blue-600 font-medium">Mangas</a>
+                    <a href="/anime" class="text-gray-600 hover:text-blue-600 font-medium">Anime</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <button class="bookmark-btn" onclick="toggleBookmark()">🔖</button>
+    
+    <div class="container">
+        <!-- Header Section -->
+        <div class="manga-header">
+            <div class="manga-top">
+                <div class="manga-poster">
+                    <!-- manga.image or  -->
+                    <img src="{{ 'https://placehold.co/300x400' }}" alt="{{ manga.title }}">
+                </div>
+                
+                <div class="manga-info">
+                    <h1 class="manga-title">{{ manga.title }}</h1>
+                    
+                    <div class="rating-section">
+                        <div class="rating-score">{{ manga.rating or '4.2' }}</div>
+                        <div>
+                            <div class="stars">
+                                {% set rating = manga.rating|float if manga.rating else 4.2 %}
+                                {% for i in range(5) %}
+                                    {% if i < rating|int %}
+                                        <span class="star">⭐</span>
+                                    {% elif i < rating %}
+                                        <span class="star">⭐</span>
+                                    {% else %}
+                                        <span class="star" style="opacity: 0.3;">⭐</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="rating-details">Average {{ manga.rating or '4.2' }} / 5 out of 15</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-grid">
+                        <div class="info-label">الحالة</div>
+                        <div class="info-value">
+                            <span class="status-badge {{ 'status-ongoing' if manga.status == 'مستمر' else 'status-completed' }}">
+                                {{ manga.status or 'OnGoing' }}
+                            </span>
+                        </div>
+                        
+                        <div class="info-label">التصنيف</div>
+                        <div class="info-value">{{ manga.genres or 'دراما، غموض، كوميدي، مغامرة، نظام' }}</div>
+                        
+                        <div class="info-label">النوع</div>
+                        <div class="info-value">{{ manga.type or 'مانهوا كورية' }}</div>
+                        
+                        <div class="info-label">المؤلف</div>
+                        <div class="info-value">{{ manga.author or 'غير معروف' }}</div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="readFirst()">أول فصل</button>
+                        <button class="btn btn-primary" onclick="readLast()">اخر فصل</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Story Section -->
+        <div class="story-section">
+            <h2 class="section-title">القصة</h2>
+            <div class="story-content" id="storyContent">
+                {{ manga.description or 'إذ ذاك، كان كيم تاي-سوك يكدح تحت وهج الشمس الحارقة في ميدان البناء، إذ أنه لم يحتبازه مرحلة تدفق الوثائق لشركة إيل سيونج العظيمة. وفي تلك اللحظة نفسها، نبرت على مقربة منه لوحة تحتل عليها الحروف عبارة تقول: "لقد وُلحت مسار البرنامج التعليمي ليصبح موظفاً ذائقاً. هل ترغب بالمتابعة؟" راهَق كيم تاي-سوك في كفاحه ليصير أسطورة الموظفين المتكاملين في معاملته الشنقة داخل دهاليز الشركات على موقع تبم اكسر!' }}
+            </div>
+            <span class="show-more" onclick="toggleStory()">Show less ▲</span>
+        </div>
+        
+        <!-- Chapters Section -->
+        <div class="chapters-section">
+            <div class="chapters-header">
+                <h2 class="section-title">أحدث الفصول المضافة</h2>
+            </div>
+            
+            {% if chapters %}
+                {% for chapter in chapters %}
+                <div class="chapter-item" onclick="readChapter('{{ chapter.id }}')">
+                    <div class="chapter-title">{{ chapter.title }}</div>
+                    <div class="chapter-date">{{ chapter.date }}</div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="chapter-item" onclick="readChapter(99)">
+                    <div class="chapter-title">99</div>
+                    <div class="chapter-date">11 نوفمبر، 2025</div>
+                </div>
+                <div class="chapter-item" onclick="readChapter(98)">
+                    <div class="chapter-title">98</div>
+                    <div class="chapter-date">11 نوفمبر، 2025</div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <script>
+        function toggleBookmark() {
+            alert('Manga ajouté aux favoris!');
+        }
+        
+        function readFirst() {
+            window.location.href = '/mangas/{{ manga.id }}/chapter/1';
+        }
+        
+        function readLast() {
+            alert('Redirection vers le dernier chapitre...');
+        }
+        
+        function readChapter(chapterId) {
+            window.location.href = '/mangas/{{ manga.id }}/chapter/' + chapterId;
+        }
+        
+        function toggleStory() {
+            const content = document.getElementById('storyContent');
+            const btn = event.target;
+            
+            if (content.style.maxHeight === 'none') {
+                content.style.maxHeight = '100px';
+                content.style.overflow = 'hidden';
+                btn.textContent = 'Show more ▼';
+            } else {
+                content.style.maxHeight = 'none';
+                content.style.overflow = 'visible';
+                btn.textContent = 'Show less ▲';
+            }
+        }
+    </script>
+</body>
+</html>

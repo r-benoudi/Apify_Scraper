@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - Media Manager</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .manga-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .manga-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+    </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- navbar -->
@@ -195,10 +209,24 @@
                     </div>
                 </div>
                 {% endfor %}
+
+                {% for item in items %}
+                    <div class="manga-card" onclick="window.location.href='/mangas/detail/{{ item.id }}'" style="cursor: pointer;">
+                        <img src="https://via.placeholder.com/200x280?text={{ item.title }}" alt="{{ item.title }}" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+                        <h3>{{ item.title }}</h3>
+                        <p><strong>Année:</strong> {{ item.year }}</p>
+                        <p><strong>Auteur:</strong> {{ item.author }}</p>
+                        <p><strong>Volumes:</strong> {{ item.volumes }}</p>
+                        <p><strong>Statut:</strong> {{ item.status }}</p>
+                    </div>
+                {% endfor %}
+
             </div>
             {% endif %}
         </main>
     </div>
+
+
 
     <!-- Edit Modal -->
     <div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">

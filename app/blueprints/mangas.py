@@ -58,3 +58,33 @@ def export(format):
         return export_to_csv(rows, headers, 'mangas.csv')
     else:
         return jsonify([i.to_dict() for i in items])
+    
+
+# Ajoutez cette route dans app/blueprints/mangas.py
+
+@mangas_bp.route('/detail/<int:id>')
+def manga_detail(id):
+    """Page de détail d'un manga"""
+    manga = Manga.query.get_or_404(id)
+    
+    # Simuler des chapitres (à remplacer par vos vrais chapitres depuis la DB)
+    chapters = [
+        {'id': 99, 'title': '99', 'date': '11 نوفمبر، 2025'},
+        {'id': 98, 'title': '98', 'date': '11 نوفمبر، 2025'},
+        {'id': 97, 'title': '97', 'date': '10 نوفمبر، 2025'},
+        {'id': 96, 'title': '96', 'date': '10 نوفمبر، 2025'},
+    ]
+    
+    manga_data = {
+        'id': manga.id,
+        'title': manga.title,
+        'rating': manga.rating if hasattr(manga, 'rating') else '4.2',
+        'status': manga.status if hasattr(manga, 'status') else 'OnGoing',
+        'genres': 'دراما، غموض، كوميدي، مغامرة، نظام',
+        'type': 'مانهوا كورية',
+        'author': manga.author if manga.author else 'غير معروف',
+        'description': 'إذ ذاك، كان كيم تاي-سوك يكدح تحت وهج الشمس الحارقة في ميدان البناء...',
+        'image': 'https://via.placeholder.com/300x400?text=' + manga.title
+    }
+    
+    return render_template('manga_detail.html', manga=manga_data, chapters=chapters)
