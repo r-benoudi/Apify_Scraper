@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mangalek - موقع المانجا العربي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            direction: rtl;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-text {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo-text span {
+            color: #fbbf24;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #fbbf24;
+        }
+        
+        .search-icon {
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .search-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Sub Navigation */
+        .sub-nav {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 15px 0;
+        }
+        
+        .sub-nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .sub-nav a {
+            color: #374151;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .sub-nav a:hover {
+            color: #2563eb;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        /* Manga Grid */
+        .manga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .manga-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .manga-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .manga-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .manga-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ef4444;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        
+        .manga-info {
+            padding: 15px;
+        }
+        
+        .manga-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 10px;
+            height: 45px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .manga-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .rating-score {
+            font-size: 14px;
+            font-weight: bold;
+            color: #374151;
+        }
+        
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+        
+        .star {
+            color: #fbbf24;
+            font-size: 14px;
+        }
+        
+        .manga-chapters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .chapter-badge {
+            background: #f3f4f6;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .chapter-badge.new {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .chapter-date {
+            font-size: 11px;
+            color: #9ca3af;
+            margin-top: 5px;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .pagination a,
+        .pagination span {
+            padding: 8px 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            color: #374151;
+            text-decoration: none;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .pagination a:hover {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+        
+        .pagination .active {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+        
+        .pagination .dots {
+            border: none;
+            cursor: default;
+        }
+        
+        /* Footer */
+        .footer {
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+        
+        .footer-text {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 13px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .manga-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .header-container {
+                justify-content: center;
+            }
+            
+            .manga-image {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <div class="logo-text">
+                    Manga<span>test</span>
+                </div>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="/home">الرئيسية</a>
+                <a href="/mangas">قائمة المانجا</a>
+                <a href="/login">تسجيل الدخول</a>
+                <a href="/advanced-search">متقدم</a>
+            </nav>
+            
+            <div class="search-icon">
+                🔍
+            </div>
+        </div>
+    </header>
+    
+    <!-- Sub Navigation -->
+    <!-- <div class="sub-nav">
+        <div class="sub-nav-container">
+            <a href="/latest">التطبيق</a>
+            <a href="/discord">ديسكورد</a>
+            <a href="/translators">مطلوب مترجمين</a>
+            <a href="/upload">رفع فصول</a>
+        </div>
+    </div> -->
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="manga-grid">
+            <!-- Manga Card 1 -->
+            <div class="manga-card" onclick="window.location.href='/manga/1'">
+                <img src="https://placehold.co/200x280/ff69b4/ffffff?text=The+Law+of+Garbage" class="manga-image" alt="The Law of Garbage">
+                <span class="manga-badge">NEW</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">The Law of Garbage</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">3.4</span>
+                        <div class="stars">⭐⭐⭐☆☆</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">28</span>
+                        <div class="chapter-date">سبتمبر 11, 2025</div>
+                    </div>
+                    <!-- <div class="chapter-date">سبتمبر 11, 2025</div> -->
+                </div>
+            </div>
+            
+            <!-- Manga Card 2 -->
+            <div class="manga-card" onclick="window.location.href='/manga/2'">
+                <img src="https://placehold.co/200x280/87ceeb/ffffff?text=I+Become+a+Lead" class="manga-image" alt="I Become a Lead Character">
+                <span class="manga-badge">NEW</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">I Become a Lead Character</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">3.7</span>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">4</span>
+                        <div class="chapter-date">نوفمبر 1, 2025</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Manga Card 3 -->
+            <div class="manga-card" onclick="window.location.href='/manga/3'">
+                <img src="https://placehold.co/200x280/dda0dd/ffffff?text=Perfect+Secret+Love" class="manga-image" alt="Perfect Secret Love">
+                <span class="manga-badge">NEW</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">Perfect Secret Love: The Bad New Wife is a Little Sweet</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">3.9</span>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">576</span>
+                        <div class="chapter-date">نوفمبر 9, 2025</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Manga Card 4 -->
+            <div class="manga-card" onclick="window.location.href='/manga/4'">
+                <img src="https://placehold.co/200x280/ffe4b5/000000?text=Transferring" class="manga-image" alt="Transferring Is Difficult">
+                <span class="manga-badge">NEW</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">Transferring Is Difficult, Duke</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">4.5</span>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">34</span>
+                        <div class="chapter-date">نوفمبر 11, 2025</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Manga Card 5 -->
+            <div class="manga-card" onclick="window.location.href='/manga/5'">
+                <img src="https://placehold.co/200x280/9370db/ffffff?text=Villain+Is+Here" class="manga-image" alt="Villain Is Here">
+                <span class="manga-badge">NEW</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">Villain Is Here</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">4.4</span>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">292</span>
+                        <div class="chapter-date">نوفمبر 10, 2025</div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- Manga Card 6 -->
+            <div class="manga-card" onclick="window.location.href='/manga/6'">
+                <img src="https://placehold.co/200x280/ffd700/000000?text=Legend+of+Star" class="manga-image" alt="Legend of Star General">
+                <span class="manga-badge">+18</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">Legend of Star General</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">4.0</span>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">301</span>
+                        <div class="chapter-date">نوفمبر 5, 2025</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Manga Card 7 -->
+            <div class="manga-card" onclick="window.location.href='/manga/7'">
+                <img src="https://placehold.co/200x280/ff6347/ffffff?text=Call+of+Spear" class="manga-image" alt="Call of the Spear">
+                <span class="manga-badge">NEW</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">Call of the Spear</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">4.3</span>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">196</span>
+                        <div class="chapter-date">نوفمبر 9, 2025</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Manga Card 8 -->
+            <div class="manga-card" onclick="window.location.href='/manga/8'">
+                <img src="https://placehold.co/200x280/20b2aa/ffffff?text=Logging+10000" class="manga-image" alt="Logging 10,000 Years">
+                <span class="manga-badge">NEW</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">Logging 10,000 Years into the Future</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">4.4</span>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">270</span>
+                        <div class="chapter-date">نوفمبر 11, 2025</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Manga Card 9 -->
+            <div class="manga-card" onclick="window.location.href='/manga/9'">
+                <img src="https://placehold.co/200x280/ffa07a/000000?text=Single+Dad" class="manga-image" alt="Single Dad">
+                <span class="manga-badge">NEW</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">Single Dad In Another Realm</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">5.0</span>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">21</span>
+                        <div class="chapter-date">نوفمبر 11, 2025</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Manga Card 10 -->
+            <div class="manga-card" onclick="window.location.href='/manga/10'">
+                <img src="https://placehold.co/200x280/cd5c5c/ffffff?text=Kingdoms+of+Ruin" class="manga-image" alt="The Kingdoms of Ruin">
+                <span class="manga-badge">NEW</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">The Kingdoms of Ruin</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">4.0</span>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">412</span>
+                        <div class="chapter-date">نوفمبر 11, 2025</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Manga Card 11 -->
+            <div class="manga-card" onclick="window.location.href='/manga/11'">
+                <img src="https://placehold.co/200x280/90ee90/000000?text=Tang+Clan" class="manga-image" alt="The Tang Clan Chronicles">
+                <span class="manga-badge">NEW</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">The Tang Clan Chronicles</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">4.5</span>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">25</span>
+                        <div class="chapter-date">نوفمبر 13, 2025</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Manga Card 12 -->
+            <div class="manga-card" onclick="window.location.href='/manga/12'">
+                <img src="https://placehold.co/200x280/f0e68c/000000?text=Miss+Pendleton" class="manga-image" alt="Miss Pendleton">
+                <span class="manga-badge">NEW</span>
+                <div class="manga-info">
+                    <h3 class="manga-title">Miss Pendleton</h3>
+                    <div class="manga-rating">
+                        <span class="rating-score">4.3</span>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                    </div>
+                    <div class="manga-chapters">
+                        <span class="chapter-badge new">NEW</span>
+                        <span class="chapter-badge">47</span>
+                        <div class="chapter-date">نوفمبر 10, 2025</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="?page=631">الأخيرة »</a>
+            <a href="?page=2">««</a>
+            <span class="dots">...</span>
+            <a href="?page=30">30</a>
+            <a href="?page=20">20</a>
+            <a href="?page=10">10</a>
+            <span class="dots">...</span>
+            <a href="?page=5">5</a>
+            <a href="?page=4">4</a>
+            <a href="?page=3">3</a>
+            <a href="?page=2">2</a>
+            <span class="active">1</span>
+            <span>الصفحة 1 من 631</span>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="/">الرئيسية</a>
+                <span>|</span>
+                <a href="/manga-list">قائمة المانجا</a>
+                <span>|</span>
+                <a href="/latest">أحدث الفصول</a>
+            </div>
+            <p class="footer-text">مانجا ليك - أفضل موقع عربي للمانجا المترجمة</p>
+        </div>
+    </footer>
+</body>
+</html>
