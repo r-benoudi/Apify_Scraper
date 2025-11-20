@@ -83,3 +83,5 @@ class User(db.Model):
 
     def is_admin(self):
         return self.role == "admin"
+
+    
