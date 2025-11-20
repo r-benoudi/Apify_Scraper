@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - We Manga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-blue-50 min-h-screen flex items-center justify-center">
+
+    <!-- Navbar -->
+    <nav class="w-full bg-white/80 backdrop-blur-sm fixed top-0 left-0 z-40">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="text-lg font-bold text-gray-800">Media Manager</a>
+                <div class="space-x-4">
+                    <a href="/movies" class="text-gray-700 hover:text-blue-600">Movies</a>
+                    <a href="/mangas" class="text-gray-700 hover:text-blue-600">Mangas</a>
+                    <a href="/anime" class="text-gray-700 hover:text-blue-600">Anime</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-20 w-full max-w-md">
+        <div class="bg-white rounded-lg shadow-lg p-8 w-full">
+            <h1 class="text-2xl font-bold mb-4">Login to We Manga</h1>
+            <div>
+                <input id="email" type="email" placeholder="Email" class="w-full border border-gray-200 rounded px-3 py-2 mb-3" />
+                <input id="password" type="password" placeholder="Password" class="w-full border border-gray-200 rounded px-3 py-2 mb-3" />
+                <button id="loginBtn" class="w-full bg-blue-600 text-white rounded px-3 py-2">Login</button>
+                <p class="text-sm mt-3 text-center">Don't have an account? <a href="/register" class="text-blue-600">Register</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', function(){
+            const email = document.getElementById('email').value.trim().toLowerCase();
+            const password = document.getElementById('password').value;
+            if(!email || !password){ alert('Please provide email and password'); return; }
+            const users = JSON.parse(localStorage.getItem('we_manga_users') || '[]');
+            const user = users.find(u => u.email === email && u.password === password);
+            if(!user){ alert('Invalid credentials'); return; }
+            localStorage.setItem('we_manga_current', JSON.stringify({ name: user.name, email: user.email }));
+            alert('Logged in as ' + user.name);
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>
