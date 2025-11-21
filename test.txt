@@ -11,7 +11,8 @@ page index =
     section 3 = contact + footer 
 
 
-
+page Home (landing page for site manga)
+    = header navbar 
 
 
 
