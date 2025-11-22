@@ -39,9 +39,17 @@
       </div>
 
       <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center bg-gray-100 rounded-full px-3 py-1 gap-2">
+        <!-- <div class="hidden sm:flex items-center bg-gray-100 rounded-full px-3 py-1 gap-2">
           <input type="search" placeholder="  Search manga" class="bg-transparent outline-none text-sm w-48" id="globalSearch">
           <button class="text-gray-600" onclick="document.getElementById('globalSearch').focus()">🔍</button>
+        </div> -->
+        <div class="flex-1 max-w-2xl px-4">
+          <form id="searchForm" action="/search" method="get">
+            <div class="flex items-center bg-gray-100 rounded-full px-3 py-1">
+              <input type="search" id="q" name="q" placeholder="Search manga by title or tag" class="bg-transparent outline-none text-sm w-full" />
+              <button type="submit" class="text-gray-600 px-3">🔍</button>
+            </div>
+          </form>
         </div>
         <a href="/login" class="text-sm px-3 py-1 border rounded-md hover:bg-gray-50">Login</a>
         <a href="/register" class="text-sm px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700">Sign Up</a>

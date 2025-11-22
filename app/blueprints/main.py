@@ -40,6 +40,10 @@ def terms():
 def privacy():
     return render_template('privacy.html')
 
+@main_bp.route('/search')
+def search():
+    return render_template('search.html')
+
 
 @main_bp.route('/register')
 def register():

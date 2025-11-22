@@ -1,0 +1,1358 @@
+[
+  {
+    "id": "dfd5d526-9f4e-48b2-82eb-9d4c267433b7",
+    "type": "manga",
+    "attributes": {
+      "title": {
+        "ja-ro": "Ura Dungeon Okusan"
+      },
+      "altTitles": [
+        {
+          "ja": "裏ダンジョンおくさん"
+        },
+        {
+          "en": "The Strongest Wife in the Hidden Dungeon"
+        }
+      ],
+      "description": {
+        "en": "After the Demon King was slain, a \"hidden dungeon\" suddenly appeared in a frontier town, said to be overrun by unimaginable monsters and to hold unbelievable treasures!! The newlywed Yui, about to attempt the dungeon, carries a certain secret...!? The level-99 martial artist who saved the world changes jobs to a level-1 housewife, only to be dragged into tackling a brutal dungeon!",
+        "ja": "魔王が討伐されし後、辺境の町に突如出現した”裏ダンジョン”──そこには想像を絶する魔物が跋扈し、とんでもない秘宝が眠るという！！ダンジョン攻略に挑まんとする新妻・ユイにはとある秘密が…！？世界を救った武道家LV99が、おくさんLV1に転職するも凶悪ダンジョンに挑むはめに──！"
+      },
+      "isLocked": false,
+      "links": {
+        "al": "191014",
+        "ap": "ura-dungeon-okusan",
+        "bw": "series/540402/list",
+        "mu": "twk4f6v",
+        "amz": "https://www.amazon.co.jp/dp/B0FLPVCNZK",
+        "ebj": "https://ebookjapan.yahoo.co.jp/books/917304",
+        "mal": "181064",
+        "raw": "https://www.sunday-webry.com/episode/2550912965598344068"
+      },
+      "officialLinks": null,
+      "originalLanguage": "ja",
+      "lastVolume": "",
+      "lastChapter": "",
+      "publicationDemographic": "seinen",
+      "status": "ongoing",
+      "year": 2025,
+      "contentRating": "suggestive",
+      "tags": [
+        {
+          "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Romance"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Comedy"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "87cc87cd-a395-47af-b27a-93258283bbc6",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Adventure"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "cdc58593-87dd-415e-bbc0-2ec27bf404cc",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Fantasy"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        }
+      ],
+      "state": "published",
+      "chapterNumbersResetOnNewVolume": false,
+      "createdAt": "2025-04-18T21:28:52+00:00",
+      "updatedAt": "2025-11-17T13:03:42+00:00",
+      "version": 18,
+      "availableTranslatedLanguages": [
+        "en",
+        "id"
+      ],
+      "latestUploadedChapter": "abe53350-8ef8-4b26-9edd-4a05f23c0f98"
+    },
+    "relationships": [
+      {
+        "id": "c006eec9-1ca9-4cab-8230-d1aa9172f476",
+        "type": "author"
+      },
+      {
+        "id": "77c2ad42-7a0a-4615-b23f-4836fdfa7a42",
+        "type": "artist"
+      },
+      {
+        "id": "0bc2bae3-65fa-4999-947c-ba3445111276",
+        "type": "cover_art"
+      },
+      {
+        "id": "67591cb1-95e1-45fd-ab85-4a45485ffc80",
+        "type": "creator"
+      }
+    ]
+  },
+  {
+    "id": "985480b8-cda1-4411-8d4f-5174a0045837",
+    "type": "manga",
+    "attributes": {
+      "title": {
+        "en": "HANA"
+      },
+      "altTitles": [
+        {
+          "ko": "하나"
+        }
+      ],
+      "description": {
+        "en": "Hana is a child who is only known by the public as a genetically modified mouse. This is the story of what happens after Hana escapes from the lab.",
+        "ko": "유전자조작 쥐로 알려져 있는 아이 HANA(하나),\n하나가 연구실에서 탈출하면서 일어나는 이야기들."
+      },
+      "isLocked": false,
+      "links": {
+        "al": "144559",
+        "mu": "v4drph8",
+        "raw": "https://comic.naver.com/webtoon/list?titleId=557675"
+      },
+      "officialLinks": null,
+      "originalLanguage": "ko",
+      "lastVolume": "",
+      "lastChapter": "191",
+      "publicationDemographic": null,
+      "status": "completed",
+      "year": 2013,
+      "contentRating": "safe",
+      "tags": [
+        {
+          "id": "256c8bd9-4904-4360-bf4f-508a76d67183",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Sci-Fi"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "391b0423-d847-456f-aff0-8b0cfc03066b",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Action"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "3e2b8dae-350e-4ab8-a8ce-016e844b9f0d",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Long Strip"
+            },
+            "description": {},
+            "group": "format",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Drama"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "e197df38-d0e7-43b5-9b09-2842d0c326dd",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Web Comic"
+            },
+            "description": {},
+            "group": "format",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "f5ba408b-0e7a-484d-8d49-4e9125ac96de",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Full Color"
+            },
+            "description": {},
+            "group": "format",
+            "version": 1
+          },
+          "relationships": []
+        }
+      ],
+      "state": "published",
+      "chapterNumbersResetOnNewVolume": false,
+      "createdAt": "2024-09-16T17:00:42+00:00",
+      "updatedAt": "2025-09-02T15:48:36+00:00",
+      "version": 6,
+      "availableTranslatedLanguages": [
+        "en"
+      ],
+      "latestUploadedChapter": "d3aa9bae-0dbc-4caf-998b-5e086620fba4"
+    },
+    "relationships": [
+      {
+        "id": "d16dfec4-5289-4c0c-b15b-78b292bcef48",
+        "type": "author"
+      },
+      {
+        "id": "d16dfec4-5289-4c0c-b15b-78b292bcef48",
+        "type": "artist"
+      },
+      {
+        "id": "ff9608e8-61bc-4a8c-9fab-9cebb4fb7c73",
+        "type": "cover_art"
+      },
+      {
+        "id": "5d732872-794b-478d-a160-fd91168056d0",
+        "type": "creator"
+      }
+    ]
+  },
+  {
+    "id": "18e11d44-4ed3-435a-992f-f4b8bcdd0979",
+    "type": "manga",
+    "attributes": {
+      "title": {
+        "en": "Maro Maro"
+      },
+      "altTitles": [
+        {
+          "ja-ro": "Maromaro"
+        },
+        {
+          "ja": "マロマロ"
+        },
+        {
+          "es-la": "Maro Maro"
+        }
+      ],
+      "description": {
+        "en": "Maro is a beautiful goddess who lives a peaceful life in the heavens and uses her water ladle to control the weather at her command. But she clumsily drops it onto Earth and hurries to retrieve it only to find that it was picked up by possibly the worst person it could have been. Kiriko Toshiki seems to be a great kid who is kind to everyone, smart, athletic and good looking, but that is all a façade and underneath it all is a sadistic elementary school kid. When he finds the water ladle, his life changes. With the water ladle in his possession, he now controls the weather and Maro is left helpless until she gets it back from Kiriko. But until that day comes, Kiriko plans on teasing and torturing Maro in so many ways.",
+        "es-la": "Maro es una hermosa diosa que vive una vida tranquila en los cielos y utiliza su cucharón de agua para controlar el clima a su antojo. Pero, torpemente, lo deja caer a la Tierra y se apresura a recuperarlo, solo para descubrir que lo ha recogido posiblemente la peor persona que podría haberlo hecho. Kiriko Toshiki parece ser un chico estupendo, amable con todo el mundo, inteligente, atlético y guapo, pero todo eso es solo una fachada, ya que en realidad es un niño sádico de primaria. Cuando encuentra el cucharón, su vida cambia. Con el cucharón en su poder, ahora controla el clima y Maro se queda indefensa hasta que se lo devuelve Kiriko. Pero hasta que llegue ese día, Kiriko planea burlarse y torturar a Maro de muchas maneras."
+      },
+      "isLocked": false,
+      "links": {
+        "al": "116318",
+        "mu": "rkl25hg"
+      },
+      "officialLinks": null,
+      "originalLanguage": "ja",
+      "lastVolume": "3",
+      "lastChapter": "17",
+      "publicationDemographic": "seinen",
+      "status": "completed",
+      "year": 2011,
+      "contentRating": "safe",
+      "tags": [
+        {
+          "id": "cdc58593-87dd-415e-bbc0-2ec27bf404cc",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Fantasy"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        }
+      ],
+      "state": "published",
+      "chapterNumbersResetOnNewVolume": false,
+      "createdAt": "2018-09-26T08:28:13+00:00",
+      "updatedAt": "2025-11-15T23:07:43+00:00",
+      "version": 9,
+      "availableTranslatedLanguages": [
+        "es-la"
+      ],
+      "latestUploadedChapter": "7fa65ee2-7081-466f-807a-80e0247dbb95"
+    },
+    "relationships": [
+      {
+        "id": "1f9a5158-4294-497c-b242-57c202c7120f",
+        "type": "author"
+      },
+      {
+        "id": "1f9a5158-4294-497c-b242-57c202c7120f",
+        "type": "artist"
+      },
+      {
+        "id": "2f83f3f1-9c00-41ad-be9c-b5b2754fb933",
+        "type": "cover_art"
+      }
+    ]
+  },
+  {
+    "id": "7b727ae2-2842-4c46-af8b-9162b7806659",
+    "type": "manga",
+    "attributes": {
+      "title": {
+        "en": "Girl Meets Rock!"
+      },
+      "altTitles": [
+        {
+          "ja": "ふつうの軽音部"
+        },
+        {
+          "ja-ro": "Futsuu no Keionbu"
+        },
+        {
+          "nl": "Het meisje dat rock ontdekte!"
+        },
+        {
+          "fr": "La fille qui découvre le rock !"
+        },
+        {
+          "pt-br": "Garota conhece o rock!"
+        },
+        {
+          "ru": "Девушка встречает Рок"
+        },
+        {
+          "es-la": "¡Chica descubre el rock!"
+        }
+      ],
+      "description": {
+        "en": "With a passion for richly textured Japanese rock, first-year high school student Chihiro Hatono steps into the world of the light music club, new guitar in tow. But what awaits her behind those doors...?\n___\n**Official English Volumes:** [Seven Seas](https://x.com/gomanga/status/1959021776748298447)",
+        "ja": "ちょっと渋めの邦ロックを愛する新高校1年生・鳩野ちひろは、初心者ながらも憧れのギターを手に入れ、念願の軽音部に入部する。個性豊かな部員たちに困惑しつつも、バンドを結成することになるが――！？",
+        "es-la": "Chihiro Hatono, estudiante de primer año de preparatoria y apasionada por el rock japonés se adentra en el mundo del club de música ligera con una nueva guitarra a cuestas. Pero, ¿qué le espera tras esas puertas...? ¡Un drama sobre juventud sin filtros y ambición musical toma el escenario!",
+        "pt-br": "Com uma paixão pelo rock japonês ricamente texturizado, a estudante do primeiro ano do ensino médio Chihiro Hatono entra no mundo do clube de música leve, com uma nova guitarra em mãos. Mas o que a espera atrás daquelas portas...? Um drama de juventude não filtrada e ambição musical sobe ao palco!"
+      },
+      "isLocked": false,
+      "links": {
+        "al": "173343",
+        "ap": "girl-meets-rock",
+        "bw": "series/460788/list",
+        "kt": "70934",
+        "mu": "6efvamt",
+        "amz": "https://www.amazon.co.jp/dp/B0CW1CS3CP",
+        "cdj": "https://www.cdjapan.co.jp/product/NEOBK-2957735",
+        "ebj": "https://ebookjapan.yahoo.co.jp/books/821836",
+        "mal": "166080",
+        "raw": "https://shonenjumpplus.com/episode/16457717013869519536",
+        "engtl": "https://mangaplus.shueisha.co.jp/titles/100291"
+      },
+      "officialLinks": null,
+      "originalLanguage": "ja",
+      "lastVolume": "",
+      "lastChapter": "",
+      "publicationDemographic": "shounen",
+      "status": "ongoing",
+      "year": 2024,
+      "contentRating": "suggestive",
+      "tags": [
+        {
+          "id": "0a39b5a1-b235-4886-a747-1d05d216532d",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Award Winning"
+            },
+            "description": {},
+            "group": "format",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Comedy"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Drama"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "School Life"
+            },
+            "description": {},
+            "group": "theme",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Slice of Life"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "f42fbf9e-188a-447b-9fdc-f19dc1e4d685",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Music"
+            },
+            "description": {},
+            "group": "theme",
+            "version": 1
+          },
+          "relationships": []
+        }
+      ],
+      "state": "published",
+      "chapterNumbersResetOnNewVolume": false,
+      "createdAt": "2024-01-02T16:11:53+00:00",
+      "updatedAt": "2025-10-27T14:53:56+00:00",
+      "version": 58,
+      "availableTranslatedLanguages": [
+        "es-la",
+        "es",
+        "pt-br",
+        "fr",
+        "en"
+      ],
+      "latestUploadedChapter": "d2cb2423-acb9-40a6-8cd9-f778d70f8fb0"
+    },
+    "relationships": [
+      {
+        "id": "1138743f-5eed-4a42-b0ed-6f34fb301090",
+        "type": "author"
+      },
+      {
+        "id": "02e4108a-fcef-403e-8dd8-0cd30f3bd457",
+        "type": "artist"
+      },
+      {
+        "id": "ac64de68-94fb-4e67-b0af-1dfd490d090e",
+        "type": "cover_art"
+      },
+      {
+        "id": "51860939-3c4c-4282-95af-82dc3b1f7878",
+        "type": "manga",
+        "related": "preserialization"
+      },
+      {
+        "id": "fb03ae91-2304-4a1f-b9e2-6b5ba3313138",
+        "type": "creator"
+      }
+    ]
+  },
+  {
+    "id": "ddb80900-12c2-4b9e-bfb7-cb8abc082f9a",
+    "type": "manga",
+    "attributes": {
+      "title": {
+        "en": "Ojousama no Shimobe"
+      },
+      "altTitles": [
+        {
+          "ja": "お嬢様の僕"
+        },
+        {
+          "en": "The Lady's Servant"
+        },
+        {
+          "en": "The Young Lady's Servant"
+        },
+        {
+          "zh-hk": "大小姐的僕人"
+        },
+        {
+          "pt": "Servo da Jovem Senhora"
+        },
+        {
+          "ru": "Слуга юной госпожи"
+        },
+        {
+          "es-la": "El Sirviente de la Joven Dama"
+        },
+        {
+          "es-la": "El Sirviente de la Señorita"
+        }
+      ],
+      "description": {
+        "en": "The story centers around a main character who was raised as a butler from his family's trade, and who one day meets a rich young lady who cannot even change her own clothes, let alone know what to do in the outside world.",
+        "ja": "父は執事、母はメイドという両親の元で生まれ育ち、世話焼き属性が染みついた主人公の前に現れたのは、身の回りのことが何も出来ないお嬢様。",
+        "pt": "A história se concentra em um personagem principal que foi criado como mordomo do comércio de sua família e que, um dia, conhece um jovem rica que nem sequer consegue trocar sua própria roupa e, muito menos, saber o que fazer no mundo exterior.",
+        "es-la": "La historia se centra en un personaje principal que fue criado como un mayordomo por la ocupación de su familia, y que un día conoce a una joven rica que no puede siquiera cambiarse la ropa por su propia cuenta, y mucho menos, saber qué hacer en el mundo exterior.",
+        "pt-br": "A história se concentra em um personagem principal que tem uma personalidade intrometida cujo pai é um mordomo e cuja mãe é uma criada e que, um dia, conhece uma jovem rica que nem sequer consegue trocar sua própria roupa e, muito menos, saber o que fazer no mundo exterior"
+      },
+      "isLocked": false,
+      "links": {
+        "al": "104133",
+        "ap": "the-ladys-servant",
+        "kt": "51802",
+        "mu": "dqekq40",
+        "mal": "111136",
+        "raw": "https://pocket.shonenmagazine.com/episode/13932016480029241855"
+      },
+      "officialLinks": null,
+      "originalLanguage": "ja",
+      "lastVolume": "18",
+      "lastChapter": "158",
+      "publicationDemographic": "shounen",
+      "status": "completed",
+      "year": 2017,
+      "contentRating": "suggestive",
+      "tags": [
+        {
+          "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Romance"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Comedy"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "aafb99c1-7f60-43fa-b75f-fc9502ce29c7",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Harem"
+            },
+            "description": {},
+            "group": "theme",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "School Life"
+            },
+            "description": {},
+            "group": "theme",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Slice of Life"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        }
+      ],
+      "state": "published",
+      "chapterNumbersResetOnNewVolume": false,
+      "createdAt": "2019-05-27T07:21:56+00:00",
+      "updatedAt": "2025-11-15T20:21:55+00:00",
+      "version": 36,
+      "availableTranslatedLanguages": [
+        "en",
+        "pt-br",
+        "fr",
+        "es-la",
+        "ru"
+      ],
+      "latestUploadedChapter": "f53c7394-53d3-47c1-89cd-cf0c8fc0c7b4"
+    },
+    "relationships": [
+      {
+        "id": "f6124e04-05cb-4b76-b78f-284e18723331",
+        "type": "author"
+      },
+      {
+        "id": "f6124e04-05cb-4b76-b78f-284e18723331",
+        "type": "artist"
+      },
+      {
+        "id": "cca6241c-89f7-4331-b4f4-26ba3e8a00c0",
+        "type": "cover_art"
+      },
+      {
+        "id": "26c21fc9-c1b2-4175-a23e-893b0680c669",
+        "type": "manga",
+        "related": "colored"
+      },
+      {
+        "id": "ab65d859-f48f-47ab-a4df-eb63700f66cb",
+        "type": "manga",
+        "related": "shared_universe"
+      }
+    ]
+  },
+  {
+    "id": "1f9fb803-733a-4104-bea3-f4b449da5e3c",
+    "type": "manga",
+    "attributes": {
+      "title": {
+        "en": "Tonari no Kurokawa-san"
+      },
+      "altTitles": [
+        {
+          "ja": "となりの黒川さん"
+        },
+        {
+          "en": "My Neighbor Ms. Kurokawa"
+        },
+        {
+          "en": "My Neighbor Kurokawa-san"
+        },
+        {
+          "en": "Kurokawa-san Next To Me"
+        },
+        {
+          "vi": "Cô bạn bàn bên Kurokawa"
+        },
+        {
+          "pl": "Moja Sąsiadka Panna Kurokawa"
+        }
+      ],
+      "description": {
+        "en": "_The secret between me and her is trivial yet important._\n\nHajime Takahashi, enrolled in Shuubi High School solely because it's the sacred place of his favorite manga. Everywhere in the school are locations that appeared in the manga, and he's super excited! Amidst this excitement, Takahashi meets a beautiful girl, Yayoi Kurokawa, who looks just like the heroine from his favorite work, and they come to share a certain secret.",
+        "ja": "僕と彼女の秘密は、些細だけど大切で。大好きな漫画の聖地、それだけが理由で秀美高校に入学した主人公・高橋一。学内はどこに行っても作品に出てきた聖地だらけで大興奮！そんな中、高橋は大好きな作品のヒロインそっくりな美少女・黒川弥生と出会い、とある秘密を共有することに――。不器用な2人が織りなす甘酸っぱくて、ニヤニヤしちゃう青春ラブコメ‼",
+        "vi": "Bí mật giữa mình và cậu ấy tuy bình thường nhưng quan trọng!Hajime Takahashi nhập học tại trường cao trung Shuubi chỉ vì nơi đó là thánh địa trong bộ truyện tranh cậu yêu thích. Tất cả mọi ngóc ngách của trường đều được phác họa trong bộ truyện, điều đó khiến cậu phấn khích tột cùng! Giữa không khí hào hứng, Takahashi gặp một cô gái xinh đẹp giống hệt nữ chính trong tác phẩm yêu thích của mình, Yayoi Kurokawa, và họ đã sẻ chia bí mật của bản thân với nhau."
+      },
+      "isLocked": false,
+      "links": {
+        "al": "180788",
+        "ap": "tonari-no-kurokawa-san",
+        "bw": "series/509864",
+        "kt": "74485",
+        "mu": "zdd6st3",
+        "amz": "https://www.amazon.co.jp/dp/B0DYKB44Z3",
+        "cdj": "https://www.cdjapan.co.jp/product/NEOBK-3057048",
+        "ebj": "https://ebookjapan.yahoo.co.jp/books/877009",
+        "mal": "172849",
+        "raw": "https://pocket.shonenmagazine.com/episode/2550689798859425569"
+      },
+      "officialLinks": null,
+      "originalLanguage": "ja",
+      "lastVolume": "",
+      "lastChapter": "",
+      "publicationDemographic": "shounen",
+      "status": "ongoing",
+      "year": 2024,
+      "contentRating": "safe",
+      "tags": [
+        {
+          "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Romance"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Comedy"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "School Life"
+            },
+            "description": {},
+            "group": "theme",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Slice of Life"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        }
+      ],
+      "state": "published",
+      "chapterNumbersResetOnNewVolume": false,
+      "createdAt": "2024-08-08T07:00:18+00:00",
+      "updatedAt": "2025-08-14T03:14:23+00:00",
+      "version": 26,
+      "availableTranslatedLanguages": [
+        "pt-br",
+        "vi",
+        "pl",
+        "en",
+        "id",
+        "th"
+      ],
+      "latestUploadedChapter": "f73ff165-0b25-4ef8-b95b-2a9eac24297c"
+    },
+    "relationships": [
+      {
+        "id": "c6badec7-4d9f-4f92-85cb-823f5b50ef40",
+        "type": "author"
+      },
+      {
+        "id": "c6badec7-4d9f-4f92-85cb-823f5b50ef40",
+        "type": "artist"
+      },
+      {
+        "id": "acbf7fc2-9692-4a55-9e2f-1c0f990d99c6",
+        "type": "cover_art"
+      },
+      {
+        "id": "f4c81724-4e50-4215-a046-850205a9ab0b",
+        "type": "creator"
+      }
+    ]
+  },
+  {
+    "id": "ce381559-8d1e-42fe-9cfe-058213609538",
+    "type": "manga",
+    "attributes": {
+      "title": {
+        "en": "Type-Moon Gakuen - Chibi Chuki!"
+      },
+      "altTitles": [
+        {
+          "ja": "TYPE-MOON学園 ちびちゅき！"
+        }
+      ],
+      "description": {
+        "en": "A gag manga written by Hanabana Tsubomi. It features numerous characters from various TYPE-MOON works in a school setting."
+      },
+      "isLocked": false,
+      "links": {
+        "al": "87196",
+        "ap": "type-moon-gakuen-chibichuki",
+        "kt": "35473",
+        "mu": "jbwf0fn",
+        "mal": "87581",
+        "raw": "https://web-ace.jp/tmca/contents/2000009/"
+      },
+      "officialLinks": null,
+      "originalLanguage": "ja",
+      "lastVolume": "",
+      "lastChapter": "",
+      "publicationDemographic": "shounen",
+      "status": "ongoing",
+      "year": 2013,
+      "contentRating": "safe",
+      "tags": [
+        {
+          "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Comedy"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        }
+      ],
+      "state": "published",
+      "chapterNumbersResetOnNewVolume": false,
+      "createdAt": "2018-12-16T19:00:27+00:00",
+      "updatedAt": "2025-11-15T20:03:08+00:00",
+      "version": 11,
+      "availableTranslatedLanguages": [
+        "en",
+        "es-la"
+      ],
+      "latestUploadedChapter": "62cdd125-589b-4c6a-89be-25142a92da90"
+    },
+    "relationships": [
+      {
+        "id": "4de03cce-82aa-4ba2-896a-5856813a0df8",
+        "type": "author"
+      },
+      {
+        "id": "7b9374fb-9332-43d9-9371-ed5383ff95c6",
+        "type": "author"
+      },
+      {
+        "id": "4de03cce-82aa-4ba2-896a-5856813a0df8",
+        "type": "artist"
+      },
+      {
+        "id": "69789144-2c73-44e4-a1b5-22b4bb01bd56",
+        "type": "cover_art"
+      }
+    ]
+  },
+  {
+    "id": "65936513-d6aa-4aeb-ae16-6afb00c3d8c3",
+    "type": "manga",
+    "attributes": {
+      "title": {
+        "en": "From Six to Sovereignty: The Girl Who Ruled"
+      },
+      "altTitles": [
+        {
+          "zh": "六岁开始成为女王"
+        },
+        {
+          "zh-ro": "Liù Suì Kāishǐ Chéngwéi Nǚwáng"
+        },
+        {
+          "en": "Becoming the Queen at the Age of Six"
+        },
+        {
+          "en": "Becoming Queen at the Age of Six"
+        },
+        {
+          "zh-ro": "Liu Sui Kaishi Chengwei Nvwang"
+        },
+        {
+          "ja": "呪われ令嬢ですが、王国を救うヒロインになります"
+        }
+      ],
+      "description": {
+        "en": "Tracy was only 16 when she was sentenced to death. Unloved and unwanted, she died as a forgotten side character in someone else's story. But fate gives her a chance to write her own story as the protagonist this time by sending her back into her six-year-old body. This time, Tracy knows every betrayal coming her way and refuses to be a mere stepping stone again. If survival means becoming the villain, she'll gladly embrace the darkness. Now, let the real story begin.",
+        "fr": "À mon réveil, j’ai découvert que j’avais été transportée dans un roman… sous les traits d’un simple personnage secondaire condamné à mourir.\nDésormais prisonnière du corps d’une enfant de six ans, les épreuves s’annoncent nombreuses.\nMais il est hors de question que je me laisse faire par le destin.\nQuitte à devenir une méchante, je survivrai, coûte que coûte."
+      },
+      "isLocked": false,
+      "links": {
+        "al": "194115",
+        "ap": "becoming-the-queen-at-the-age-of-six",
+        "mu": "mail6e3",
+        "raw": "https://ac.qq.com/Comic/ComicInfo/id/656168",
+        "engtl": "https://www.tappytoon.com/en/book/from-six-to-sovereignty"
+      },
+      "officialLinks": null,
+      "originalLanguage": "zh",
+      "lastVolume": "",
+      "lastChapter": "",
+      "publicationDemographic": null,
+      "status": "ongoing",
+      "year": 2024,
+      "contentRating": "safe",
+      "tags": [
+        {
+          "id": "391b0423-d847-456f-aff0-8b0cfc03066b",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Action"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "3e2b8dae-350e-4ab8-a8ce-016e844b9f0d",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Long Strip"
+            },
+            "description": {},
+            "group": "format",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Romance"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "ace04997-f6bd-436e-b261-779182193d3d",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Isekai"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "f5ba408b-0e7a-484d-8d49-4e9125ac96de",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Full Color"
+            },
+            "description": {},
+            "group": "format",
+            "version": 1
+          },
+          "relationships": []
+        }
+      ],
+      "state": "published",
+      "chapterNumbersResetOnNewVolume": false,
+      "createdAt": "2025-01-08T23:17:23+00:00",
+      "updatedAt": "2025-08-09T19:32:34+00:00",
+      "version": 13,
+      "availableTranslatedLanguages": [
+        "fr",
+        "en"
+      ],
+      "latestUploadedChapter": "bfa4c314-d661-4119-b350-11a538867b06"
+    },
+    "relationships": [
+      {
+        "id": "3c57319c-df31-4b57-9b80-e58d17cb237e",
+        "type": "author"
+      },
+      {
+        "id": "3c57319c-df31-4b57-9b80-e58d17cb237e",
+        "type": "artist"
+      },
+      {
+        "id": "7d080a0a-74cc-47b6-b5c9-c8052158a3b0",
+        "type": "cover_art"
+      },
+      {
+        "id": "6ed1fa00-93c9-4921-bf2f-787d19966f00",
+        "type": "creator"
+      }
+    ]
+  },
+  {
+    "id": "82858f3f-8c93-4434-9b54-94464dad3116",
+    "type": "manga",
+    "attributes": {
+      "title": {
+        "en": "Four Choices"
+      },
+      "altTitles": [
+        {
+          "ko": "사지선다"
+        },
+        {
+          "ko-ro": "Sajiseonda"
+        }
+      ],
+      "description": {
+        "en": "A perfectionist model student believed love was a luxury. Suddenly, four choices appear and her heart wavers. Is this okay?",
+        "fr": "Une étudiante modèle et perfectionniste qui croyait que l'amour était un luxe voit son coeur vaciller lorsque quatre choix s'offre à elle.\n\nEst-ce vraiment une bonne chose ?"
+      },
+      "isLocked": false,
+      "links": {
+        "al": "196606",
+        "mal": "184496",
+        "raw": "https://comic.naver.com/webtoon/list?titleId=841128"
+      },
+      "officialLinks": null,
+      "originalLanguage": "ko",
+      "lastVolume": "",
+      "lastChapter": "",
+      "publicationDemographic": null,
+      "status": "ongoing",
+      "year": null,
+      "contentRating": "safe",
+      "tags": [
+        {
+          "id": "3e2b8dae-350e-4ab8-a8ce-016e844b9f0d",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Long Strip"
+            },
+            "description": {},
+            "group": "format",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Romance"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Drama"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "cdc58593-87dd-415e-bbc0-2ec27bf404cc",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Fantasy"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "e197df38-d0e7-43b5-9b09-2842d0c326dd",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Web Comic"
+            },
+            "description": {},
+            "group": "format",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "f5ba408b-0e7a-484d-8d49-4e9125ac96de",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Full Color"
+            },
+            "description": {},
+            "group": "format",
+            "version": 1
+          },
+          "relationships": []
+        }
+      ],
+      "state": "published",
+      "chapterNumbersResetOnNewVolume": false,
+      "createdAt": "2025-07-29T19:47:41+00:00",
+      "updatedAt": "2025-09-30T19:51:56+00:00",
+      "version": 7,
+      "availableTranslatedLanguages": [
+        "en",
+        "fr"
+      ],
+      "latestUploadedChapter": "16c77f0d-af53-4e0d-9c6b-514b3aabe938"
+    },
+    "relationships": [
+      {
+        "id": "328012f5-7def-4fdd-80e3-f46594b212a3",
+        "type": "author"
+      },
+      {
+        "id": "328012f5-7def-4fdd-80e3-f46594b212a3",
+        "type": "artist"
+      },
+      {
+        "id": "5004ccbd-5ffe-421a-8cf1-4af7bc58ea4d",
+        "type": "cover_art"
+      },
+      {
+        "id": "43026266-1f5f-4e60-8ee3-05876355e18f",
+        "type": "creator"
+      }
+    ]
+  },
+  {
+    "id": "0a580438-bc72-4503-940b-12a5da881b56",
+    "type": "manga",
+    "attributes": {
+      "title": {
+        "en": "Kimi wa Yotsuba no Clover"
+      },
+      "altTitles": [
+        {
+          "ja": "きみは四葉のクローバー"
+        },
+        {
+          "en": "You Are a Four-Leaf Clover"
+        },
+        {
+          "zh": "恋人手中四叶草"
+        },
+        {
+          "zh-hk": "戀人手中四葉草"
+        },
+        {
+          "ar": "أنتِ زهرة الحظ"
+        },
+        {
+          "pt-br": "Você é um Trevo de Quatro Folhas"
+        },
+        {
+          "vi": "Cậu là cỏ 4 lá"
+        }
+      ],
+      "description": {
+        "ar": "كان يويتشي محبوبًا في السابق، لكنه الآن يتعرض للتنمر بشكل مفرط. وفجأة، تظهر أمامه حبيبته الأولى يوتسُوها. ما هدف هذه الفتاة اللطيفة والشجاعة…؟",
+        "en": "Uichi was once popular, but now he is being bullied excessively. Then suddenly, his first love, Yotsuha, appears in front of him. What is this cute and brave girl's purpose...?",
+        "ja": "かつての人気者で、今は過激ないじめを受ける宇一。そんな彼の前に突然現れた初恋の相手・よつは。可愛く健気な彼女の目的とは一体…！？",
+        "vi": "Câu chuyện romcom nhẹ nhàng về hành trình chữa lành trái tim đã tan vỡ của main",
+        "zh": "某天，曾很有人气的宇一的生活陡然一变。 以往光芒四射的日子被用抹布也无法擦去的黑暗所笼罩。 这时，熟悉宇一过去的初恋—— 四叶突然出现在了他的面前。 她的目的究竟是…！？",
+        "pt-br": "Uichi já foi um garoto popular e deseja ser um veterinário, porém com o passar do tempo virou alvo de bullying. Então, quando tudo estava sendo horrível, de repente, seu primeiro amor, Yotsuba, aparece em sua frente. Qual será o objetivo dessa linda e corajosa garota que não aparecia a 7 anos?",
+        "zh-hk": "某天，曾很有人氣的宇一的生活陡然一變。 以往光芒四射的日子被抹布也無法擦去的黑暗所籠罩。 這時，熟悉宇一過去的初戀── 四葉突然出現在了他的面前。 她的目的究竟是…！ ？"
+      },
+      "isLocked": false,
+      "links": {
+        "al": "180647",
+        "ap": "kimi-wa-yotsuba-no-clover",
+        "bw": "series/494989/list",
+        "kt": "74062",
+        "mu": "3fv0my9",
+        "amz": "https://www.amazon.co.jp/dp/B0DMTJ78CF",
+        "cdj": "https://www.cdjapan.co.jp/product/NEOBK-3080197",
+        "ebj": "https://ebookjapan.yahoo.co.jp/books/867189",
+        "mal": "172247",
+        "raw": "https://championcross.jp/series/f744ef1a6decb"
+      },
+      "officialLinks": null,
+      "originalLanguage": "ja",
+      "lastVolume": null,
+      "lastChapter": null,
+      "publicationDemographic": "shounen",
+      "status": "ongoing",
+      "year": 2024,
+      "contentRating": "safe",
+      "tags": [
+        {
+          "id": "292e862b-2d17-4062-90a2-0356caa4ae27",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Time Travel"
+            },
+            "description": {},
+            "group": "theme",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "3b60b75c-a2d7-4860-ab56-05f391bb889c",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Psychological"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Romance"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Drama"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "School Life"
+            },
+            "description": {},
+            "group": "theme",
+            "version": 1
+          },
+          "relationships": []
+        },
+        {
+          "id": "f8f62932-27da-4fe4-8ee1-6779a8c5edba",
+          "type": "tag",
+          "attributes": {
+            "name": {
+              "en": "Tragedy"
+            },
+            "description": {},
+            "group": "genre",
+            "version": 1
+          },
+          "relationships": []
+        }
+      ],
+      "state": "published",
+      "chapterNumbersResetOnNewVolume": false,
+      "createdAt": "2024-10-06T05:54:24+00:00",
+      "updatedAt": "2025-10-19T13:06:32+00:00",
+      "version": 33,
+      "availableTranslatedLanguages": [
+        "es-la",
+        "en",
+        "id",
+        "zh",
+        "pt-br",
+        "vi",
+        "ar",
+        "fr"
+      ],
+      "latestUploadedChapter": "a2c27c20-ca0d-4e5c-9108-44d4536c46ee"
+    },
+    "relationships": [
+      {
+        "id": "4c635f1f-b4e4-4d26-8039-a323e49cde21",
+        "type": "author"
+      },
+      {
+        "id": "4c635f1f-b4e4-4d26-8039-a323e49cde21",
+        "type": "artist"
+      },
+      {
+        "id": "69b94ff0-6e11-41b1-8de1-4af9cb001af6",
+        "type": "cover_art"
+      },
+      {
+        "id": "434d3672-6728-4f1d-ac6e-19ba839a71ad",
+        "type": "creator"
+      }
+    ]
+  }
+]

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Search — Mangalib</title>
+  <script src="/static/js/cdn.tailwindcss.js"></script>
+</head>
+<body class="bg-gradient-to-b from-gray-50 to-white text-gray-800">
+  <header class="bg-white sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex justify-between items-center h-16">
+        <a href="/" class="flex items-center gap-3">
+          <img src="https://placehold.co/48x48/ff7ab6/fff?text=M" alt="logo" class="w-10 h-10 rounded-md shadow-sm">
+          <span class="font-bold text-lg">Mangalib</span>
+        </a>
+        <div class="flex-1 max-w-2xl px-4">
+          <form id="searchForm" action="/search" method="get">
+            <div class="flex items-center bg-gray-100 rounded-full px-3 py-1">
+              <input type="search" id="q" name="q" placeholder="Search manga by title or tag" class="bg-transparent outline-none text-sm w-full" />
+              <button type="submit" class="text-gray-600 px-3">🔍</button>
+            </div>
+          </form>
+        </div>
+        <div class="hidden sm:flex gap-3">
+          <a href="/login" class="text-sm px-3 py-1 border rounded-md">Login</a>
+          <a href="/register" class="text-sm px-3 py-1 bg-blue-600 text-white rounded-md">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-8 pb-12">
+    <div class="mb-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold">Search Results</h1>
+        <p class="text-sm text-gray-500 mt-1">Search for manga by title. Results are filtered client-side for demo purposes.</p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <label class="text-sm text-gray-600">Order by</label>
+        <select id="orderBy" class="border rounded px-3 py-1 text-sm">
+          <option value="relevance">Relevance</option>
+          <option value="latest">Latest</option>
+          <option value="az">A - Z</option>
+          <option value="rating">Rating</option>
+          <option value="trending">Trending</option>
+          <option value="views">Most Views</option>
+          <option value="new">New</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="resultsInfo" class="text-sm text-gray-600 mb-4">&nbsp;</div>
+
+    <div id="resultsList" class="space-y-4">
+      <!-- Detailed result cards populated client-side -->
+
+      <!-- Example detailed card for "The Dawn to Come" -->
+      <!-- <article class="bg-white rounded-xl shadow p-4 flex gap-4 items-start" data-title="The Dawn to Come" data-views="676000" data-rating="4.6" data-release="2023" data-latest="2025-08-08T00:23:12Z">
+        <img src="/static/images/123456.jpg" alt="The Dawn to Come" class="w-28 h-40 rounded object-cover flex-none">
+        <div class="flex-1">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="font-semibold text-lg">The Dawn to Come</h2>
+              <div class="text-xs text-gray-500">Alternative: Geujeo Yeomyeong-ilppun • 그저 여명일 뿐 • Just Dawn</div>
+            </div>
+            <div class="text-sm text-gray-500">4.6 ⭐</div>
+          </div>
+
+          <div class="mt-3 text-sm text-gray-700 space-y-2">
+            <div><strong>Genres:</strong> Drama, Manhwa, Romance, Slice of life</div>
+            <div><strong>Status:</strong> OnGoing</div>
+            <div><strong>Release:</strong> 2023</div>
+            <div><strong>Latest chapter:</strong> Chapter 69.5 · <span class="text-gray-500">2025-08-08 00:23:12</span></div>
+            <div class="mt-3 text-xs text-gray-600">thumb_676e47ba4e108</div>
+          </div>
+        </div>
+      </article> -->
+
+      <!-- Sample grid items (hidden template) -->
+      <div id="templateItems" class="hidden">
+        <article class="result-item" data-title="Eternal Blade" data-views="230000" data-rating="4.9" data-release="2020" data-latest="2025-11-11T00:00:00Z"></article>
+        <article class="result-item" data-title="Samurai Dawn" data-views="120000" data-rating="4.7" data-release="2019" data-latest="2025-11-09T00:00:00Z"></article>
+        <article class="result-item" data-title="Galactic Chronicles" data-views="1500000" data-rating="4.8" data-release="2018" data-latest="2025-11-10T00:00:00Z"></article>
+        <article class="result-item" data-title="Monster Academy" data-views="980000" data-rating="4.6" data-release="2021" data-latest="2025-11-08T00:00:00Z"></article>
+        <article class="result-item" data-title="Love &amp; Fate" data-views="640000" data-rating="4.4" data-release="2017" data-latest="2025-11-06T00:00:00Z"></article>
+        <article class="result-item" data-title="Cafe Stories" data-views="120000" data-rating="4.2" data-release="2022" data-latest="2025-11-08T00:00:00Z"></article>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // load JSON database (handles files that may contain leading comments)
+    async function loadDatabase(){
+      try{
+        const res = await fetch('static/data/mmanga.json');
+        if(!res.ok) throw new Error('network');
+        let txt = await res.text();
+        // remove JS-style comments (lines starting with //)
+        txt = txt.split('\n').filter(l => !l.trim().startsWith('//')).join('\n');
+        const data = JSON.parse(txt);
+        return data;
+      }catch(e){
+        console.warn('Could not load mmanga.json, falling back to template items', e);
+        return [];
+      }
+    }
+
+    function getQueryParam(name){
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name) || '';
+    }
+
+    function pickTitle(obj){
+      // prefer English, then any other title field, then altTitles
+      const t = obj.attributes && obj.attributes.title ? obj.attributes.title : {};
+      if(t.en) return t.en;
+      const vals = Object.values(t);
+      if(vals.length) return vals[0];
+      if(Array.isArray(obj.attributes.altTitles) && obj.attributes.altTitles.length){
+        const at = obj.attributes.altTitles[0];
+        const v = Object.values(at)[0];
+        if(v) return v;
+      }
+      return 'Untitled';
+    }
+
+    function extractGenres(obj){
+      const tags = (obj.attributes && obj.attributes.tags) || [];
+      return tags.filter(t => t.attributes && t.attributes.group === 'genre').map(t => t.attributes.name.en);
+    }
+
+    function buildCardFromEntry(entry){
+      const title = pickTitle(entry);
+      const genres = extractGenres(entry).join(', ');
+      const data = {
+        title: title,
+        views: entry.attributes && entry.attributes.version ? entry.attributes.version * 1000 : 0,
+        rating: entry.attributes && entry.attributes.contentRating === 'safe' ? 4.5 : 4.6,
+        release: entry.attributes && entry.attributes.year ? entry.attributes.year : 'Unknown',
+        latest: entry.attributes && entry.attributes.updatedAt ? entry.attributes.updatedAt : new Date().toISOString(),
+        genres: genres || '—',
+        status: entry.attributes && entry.attributes.status ? entry.attributes.status : 'Unknown',
+        latestChapter: entry.attributes && entry.attributes.lastChapter ? entry.attributes.lastChapter : (entry.attributes && entry.attributes.latestUploadedChapter ? 'Uploaded' : '—')
+      };
+      return buildCard(data);
+    }
+
+    function buildCard(data){
+      const tpl = document.createElement('article');
+      tpl.className = 'bg-white rounded-xl shadow p-4 flex gap-4 items-start';
+      tpl.dataset.title = data.title;
+      tpl.dataset.views = data.views || 0;
+      tpl.dataset.rating = data.rating || 0;
+      tpl.dataset.release = data.release || 0;
+      tpl.dataset.latest = data.latest || new Date().toISOString();
+
+      tpl.innerHTML = `
+        <img src="/static/images/123456.jpg" alt="${data.title}" class="w-28 h-40 rounded object-cover flex-none">
+        <div class="flex-1">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="font-semibold text-lg">${data.title}</h2>
+              <div class="text-xs text-gray-500">Genres: ${data.genres || '—'}</div>
+            </div>
+            <div class="text-sm text-gray-500">${data.rating} ⭐</div>
+          </div>
+
+          <div class="mt-3 text-sm text-gray-700 space-y-2">
+            <div><strong>Status:</strong> ${data.status || 'Unknown'}</div>
+            <div><strong>Release:</strong> ${data.release}</div>
+            <div><strong>Latest chapter:</strong> ${data.latestChapter || 'TBD'} · <span class="text-gray-500">${new Date(data.latest).toLocaleString()}</span></div>
+          </div>
+        </div>
+      `;
+      return tpl;
+    }
+
+    function orderElements(container, mode){
+      const cards = Array.from(container.querySelectorAll('article[data-title]'));
+      let sorted = cards.slice();
+      if(mode === 'az') sorted.sort((a,b)=> a.dataset.title.localeCompare(b.dataset.title));
+      if(mode === 'rating') sorted.sort((a,b)=> Number(b.dataset.rating) - Number(a.dataset.rating));
+      if(mode === 'views') sorted.sort((a,b)=> Number(b.dataset.views) - Number(a.dataset.views));
+      if(mode === 'latest') sorted.sort((a,b)=> new Date(b.dataset.latest) - new Date(a.dataset.latest));
+      if(mode === 'new') sorted.sort((a,b)=> Number(b.dataset.release) - Number(a.dataset.release));
+      // relevance / trending keep original order
+      sorted.forEach(s=> container.appendChild(s));
+    }
+
+    async function refreshResults(q){
+      const list = document.getElementById('resultsList');
+      // remove generated cards except the example header card (The Dawn to Come)
+      const example = list.querySelector('article[data-title="The Dawn to Come"]');
+      Array.from(list.querySelectorAll('article')).forEach(a=>{ if(a !== example) a.remove(); });
+
+      // try load database
+      const db = await loadDatabase();
+      let entries = [];
+      if(db && db.length){
+        const ql = q.trim().toLowerCase();
+        db.forEach(obj => {
+          const title = String(pickTitle(obj)).toLowerCase();
+          const alt = (obj.attributes && obj.attributes.altTitles) ? obj.attributes.altTitles.map(a=>Object.values(a)[0].toLowerCase()) : [];
+          const genres = extractGenres(obj).map(g=>g.toLowerCase());
+          const hay = [title].concat(alt).concat(genres).join(' ');
+          if(ql === '' || hay.includes(ql)) entries.push(obj);
+        });
+
+        // if no matches found, show all entries per requirement
+        const usedEntries = entries.length ? entries : db;
+        usedEntries.forEach(e => list.appendChild(buildCardFromEntry(e)));
+
+        const total = usedEntries.length + (example && ((q.trim() === '' || example.dataset.title.toLowerCase().includes(q.trim().toLowerCase())) ? 1 : 0));
+        const info = q ? `${total} result(s) for "${q}"` : `${total} manga available`;
+        if(entries.length === 0 && q){
+          document.getElementById('resultsInfo').textContent = `No exact matches for "${q}" — showing all ${db.length} manga`;
+        } else {
+          document.getElementById('resultsInfo').textContent = info;
+        }
+
+      } else {
+        // fallback to existing template items if db failed to load
+        const tmpl = document.getElementById('templateItems');
+        const items = Array.from(tmpl.querySelectorAll('article'));
+        const ql = q.trim().toLowerCase();
+        let results = [];
+        items.forEach(it=>{
+          const title = it.dataset.title;
+          if(ql === '' || title.toLowerCase().includes(ql)){
+            results.push({
+              title: title,
+              views: it.dataset.views,
+              rating: it.dataset.rating,
+              release: it.dataset.release,
+              latest: it.dataset.latest,
+              genres: (title === 'Cafe Stories') ? 'Slice of Life' : 'Action',
+              status: 'OnGoing',
+              latestChapter: 'Ch. —'
+            });
+          }
+        });
+        if(results.length === 0 && q){
+          // show all template items
+          items.forEach(it=> results.push({
+            title: it.dataset.title,
+            views: it.dataset.views,
+            rating: it.dataset.rating,
+            release: it.dataset.release,
+            latest: it.dataset.latest,
+            genres: (it.dataset.title === 'Cafe Stories') ? 'Slice of Life' : 'Action',
+            status: 'OnGoing',
+            latestChapter: 'Ch. —'
+          }));
+          document.getElementById('resultsInfo').textContent = `No exact matches for "${q}" — showing all ${results.length} demo manga`;
+        } else {
+          document.getElementById('resultsInfo').textContent = q ? `${results.length} result(s) for "${q}"` : `${results.length} manga available`;
+        }
+        results.forEach(r => list.appendChild(buildCard(r)));
+      }
+
+      // apply ordering
+      const order = document.getElementById('orderBy').value;
+      orderElements(list, order);
+    }
+
+    document.addEventListener('DOMContentLoaded', async ()=>{
+      const q = getQueryParam('q');
+      if(q){ document.getElementById('q').value = q; }
+      await refreshResults(q || '');
+
+      document.getElementById('orderBy').addEventListener('change', ()=> refreshResults(document.getElementById('q').value || ''));
+
+      // simple form behaviour allows GET submit which reloads page with query param
+      document.getElementById('searchForm').addEventListener('submit', (e)=>{});
+    });
+  </script>
+</body>
+</html>

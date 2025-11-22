@@ -17,7 +17,7 @@ def create_app():
     from app.blueprints.movies import movies_bp
     from app.blueprints.mangas import mangas_bp
     from app.blueprints.anime import anime_bp
-    from app.blueprints.scraper import scraper_bp  # NOUVEAU
+    from app.blueprints.scraper_lek import scraper_bp  # NOUVEAU
 
     app.register_blueprint(main_bp)
     app.register_blueprint(movies_bp, url_prefix='/movies')
