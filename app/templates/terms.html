@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terms — Mangalib</title>
+  <script src="/static/js/cdn.tailwindcss.js"></script>
+</head>
+<body class="bg-gradient-to-b from-gray-50 to-white text-gray-800">
+
+<!-- NAVBAR -->
+<header class="bg-white sticky top-0 z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center gap-12">
+        <a href="/" class="flex items-center gap-3">
+          <img src="https://placehold.co/48x48/ff7ab6/fff?text=M" alt="logo" class="w-10 h-10 rounded-md shadow-sm">
+          <span class="font-bold text-lg">Mangalib</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="/manga-list" class="hover:text-blue-600">Manga List</a>
+          <a href="/genres" class="hover:text-blue-600">Genres</a><!-- Search by Genres -->
+          <a href="/trending" class="hover:text-blue-600">Trending</a><!-- Search by ⭐ -->
+          <a href="/new" class="hover:text-blue-600">New Releases</a><!-- Search by Date -->
+        </nav>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center bg-gray-100 rounded-full px-3 py-1 gap-2">
+          <input type="search" placeholder="  Search manga" class="bg-transparent outline-none text-sm w-48" id="globalSearch">
+          <button class="text-gray-600" onclick="document.getElementById('globalSearch').focus()">🔍</button>
+        </div>
+        <a href="/login" class="text-sm px-3 py-1 border rounded-md hover:bg-gray-50">Login</a>
+        <a href="/register" class="text-sm px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700">Sign Up</a>
+        <button class="md:hidden p-2 rounded-md" id="mobileMenuBtn">☰</button>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile nav -->
+  <div id="mobileNav" class="md:hidden hidden border-t">
+    <div class="p-3 flex flex-col gap-2">
+      <a href="/" class="px-2 py-2 rounded hover:bg-gray-50">Home</a>
+      <a href="/manga-list" class="px-2 py-2 rounded hover:bg-gray-50">Manga List</a>
+      <a href="/genres" class="px-2 py-2 rounded hover:bg-gray-50">Genres</a>
+      <a href="/trending" class="px-2 py-2 rounded hover:bg-gray-50">Trending</a>
+      <a href="/new" class="px-2 py-2 rounded hover:bg-gray-50">New Releases</a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-4xl mx-auto p-6">
+  <header class="mb-6 flex items-center gap-3">
+    <a href="/" class="text-sm text-gray-500 hover:text-gray-700">Home</a>
+    <span class="text-gray-400">»</span>
+    <h1 class="text-lg font-semibold">Terms of Use</h1>
+  </header>
+
+  <section class="bg-white rounded-xl shadow p-6">
+    <h2 class="text-2xl font-extrabold mb-4">Terms of Use</h2>
+    <p class="text-sm text-gray-700 mb-4">Welcome to MangaNelo! By using the services and accessing the content on MangaNelo, you agree to comply with the following terms. Please read them carefully before using our services.</p>
+
+    <h3 class="mt-4 font-semibold">1. Definitions and Scope of Application</h3>
+    <ul class="list-disc pl-6 mt-2 text-sm text-gray-700 space-y-2">
+      <li>These terms of use govern the access and use of the MangaNelo website, including services related to online manga reading, interactive content, comments, and other activities on the website.</li>
+      <li>MangaNelo is operated and developed by our team to provide an online manga platform for users. Users must agree to these terms of use when utilizing the service. For users under 18, parental or legal guardian consent is required to use the service.</li>
+    </ul>
+
+    <h3 class="mt-4 font-semibold">2. Changes to the Terms of Use</h3>
+    <ul class="list-disc pl-6 mt-2 text-sm text-gray-700 space-y-2">
+      <li>MangaNelo reserves the right to modify, supplement, or remove these terms of use at any time without prior notice. However, we will strive to inform users of significant changes through email or notifications on the website.</li>
+      <li>The new terms will take effect immediately upon being posted on the website. Your continued use of the service after the updated terms are posted indicates your agreement to those changes.</li>
+    </ul>
+
+    <h3 class="mt-4 font-semibold">3. Use of Services</h3>
+    <ul class="list-disc pl-6 mt-2 text-sm text-gray-700 space-y-2">
+      <li>MangaNelo provides free online manga reading services. Users are responsible for ensuring that their devices are compatible with the website and maintain a stable internet connection to access the service.</li>
+      <li>Users do not need to create an account to read manga. However, registration may be required to access certain features such as commenting, rating, or saving favorite mangas.</li>
+      <li>MangaNelo is not responsible for any issues related to the user’s internet connection quality or any damages arising from accessing and using the website.</li>
+    </ul>
+
+    <h3 class="mt-4 font-semibold">4. Advertisements and Third-Party Services</h3>
+    <ul class="list-disc pl-6 mt-2 text-sm text-gray-700 space-y-2">
+      <li>MangaNelo may display advertisements from sponsors or third-party partners while you are using the website. These ads help maintain our free service.</li>
+      <li>MangaNelo may provide links to third-party websites. These websites operate independently, and MangaNelo is not responsible for the content, privacy policies, or transactions arising from accessing those websites.</li>
+    </ul>
+
+    <h3 class="mt-4 font-semibold">5. Content and Copyright</h3>
+    <ul class="list-disc pl-6 mt-2 text-sm text-gray-700 space-y-2">
+      <li>All content provided on MangaNelo, including but not limited to manga, images, text, and videos, is owned by MangaNelo or its licensed partners. Users are permitted to use this content only for personal, non-commercial purposes.</li>
+      <li>Any copying, distribution, republication, or use of MangaNelo’s content without our consent is considered a copyright violation and may result in the suspension or termination of access to the website, and potentially legal action if necessary.</li>
+    </ul>
+
+    <h3 class="mt-4 font-semibold">6. Prohibited Conduct</h3>
+    <p class="text-sm text-gray-700">Users are not allowed to engage in the following actions when using MangaNelo:</p>
+    <ul class="list-disc pl-6 mt-2 text-sm text-gray-700 space-y-2">
+      <li>Using the website for commercial purposes without prior approval from us.</li>
+      <li>Performing any action that disrupts or interferes with the operation of the website or hinders the experience of other users.</li>
+      <li>Distributing malware, viruses, or any tools that harm the website or other users.</li>
+      <li>Using the personal information of other users without legal authorization.</li>
+    </ul>
+
+    <h3 class="mt-4 font-semibold">7. Security and Privacy</h3>
+    <ul class="list-disc pl-6 mt-2 text-sm text-gray-700 space-y-2">
+      <li>We are committed to protecting users' privacy. When using MangaNelo’s services, you may need to provide certain personal information. The handling and storage of this information will comply with MangaNelo’s Privacy Policy.</li>
+      <li>Users are responsible for protecting their accounts and personal information, including not sharing passwords with others.</li>
+    </ul>
+
+    <h3 class="mt-4 font-semibold">8. Limitation of Liability</h3>
+    <ul class="list-disc pl-6 mt-2 text-sm text-gray-700 space-y-2">
+      <li>MangaNelo is not responsible for any direct, indirect, or consequential damages arising from the use of the website or our services.</li>
+      <li>Although we strive to ensure the quality of the content, MangaNelo does not guarantee that the manga or information on the website will be error-free, virus-free, or free from other harmful elements.</li>
+    </ul>
+
+    <h3 class="mt-4 font-semibold">9. Termination of Use</h3>
+    <p class="text-sm text-gray-700">MangaNelo reserves the right to terminate or suspend your access to the website if you violate these terms or engage in any prohibited activities as outlined above.</p>
+
+    <div class="mt-6 text-sm text-gray-600">These terms of use help maintain a safe and friendly environment for all users when accessing and using MangaNelo. Thank you for reading and adhering to these rules!</div>
+  </section>
+
+  <footer class="mt-8 text-sm text-gray-500">© <span id="year"></span> MangaNelo</footer>
+</main>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();
+// mobile menu
+document.getElementById('mobileMenuBtn').addEventListener('click', function(){
+  const nav = document.getElementById('mobileNav');
+  nav.classList.toggle('hidden');
+});
+</script>
+</body>
+</html>
