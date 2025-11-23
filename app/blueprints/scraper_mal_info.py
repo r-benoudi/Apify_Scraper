@@ -41,25 +41,43 @@ def scrape_agent(url):
     soup = BeautifulSoup(response.content,"html.parser")
 
     """
-    manga_id
-    title
-    type
-    score
-    scored_by
-    status
-    volumes
-    chapters
-    start_date
-    end_date
-    members
-    favorites
-    sfw
-    approved
-    created_at_before
-    updated_at
-    real_start_date	real_end_date
-    genres
-    themes
+    manga_id = https://myanimelist.net/manga/25/Fullmetal_Alchemist == > is "25"
+    title  =  class="h1-title"  (span)
+    type   =  class="information type" (span)  or  <div class="spaceit_pad"><span class="dark_text">Type:</span> <a href="/topmanga.php?type=manga">Manga</a></div>
+    scored_by  =  class="fl-l score" (div)---------|
+    score  =  class="score-label score-9" (div)----|
+    status = <div class="spaceit_pad"> <span class="dark_text"> Status: </span> Finished </div> "problem"
+    volumes = <div class="spaceit_pad"> <span class="dark_text"> Volumes:</span> 27 </div>      "problem"
+    chapters = <div class="spaceit_pad"><span class="dark_text">Chapters:</span> 116 </div>     "problem"
+    start_date <div class="spaceit_pad"><span class="dark_text">Published:</span> Jul  12, 2001 to Sep  11, 2010</div>
+    end_date   <div class="spaceit_pad"><span class="dark_text">Published:</span> Jul  12, 2001 to Sep  11, 2010</div>
+    members  <span class="numbers members">Members <strong>317,185</strong></span>  or  <div class="spaceit_pad"><span class="dark_text">Members:</span> 317,185</div>
+    favorites  <div class="spaceit_pad"><span class="dark_text">Favorites:</span> 31,101</div>
+    sfw       ????
+    approved  ????
+    created_at_before  ????
+    updated_at         ????
+    real_start_date	real_end_date  <div class="spaceit_pad"><span class="dark_text">Published:</span> Jul  12, 2001 to Sep  11, 2010</div>
+    
+    genres  <div class="spaceit_pad">
+                    <span class="dark_text">Genres:</span>
+                            <span itemprop="genre" style="display:none">Action</span>
+            <a href="/manga/genre/1/Action" title="Action">
+                Action</a>,                    <span itemprop="genre" style="display:none">Adventure</span>
+            <a href="/manga/genre/2/Adventure" title="Adventure">
+                Adventure</a>,                    <span itemprop="genre" style="display:none">Award Winning</span>
+            <a href="/manga/genre/46/Award_Winning" title="Award Winning">
+                Award Winning</a>,                    <span itemprop="genre" style="display:none">Drama</span>
+            <a href="/manga/genre/8/Drama" title="Drama">
+                Drama</a>,                    <span itemprop="genre" style="display:none">Fantasy</span>
+            <a href="/manga/genre/10/Fantasy" title="Fantasy">
+                Fantasy</a>            </div>
+    
+    themes  <div class="spaceit_pad">
+                    <span class="dark_text">Theme:</span>
+                            <span itemprop="genre" style="display:none">Military</span>
+            <a href="/manga/genre/38/Military" title="Military">
+                Military</a>            </div>
     demographics
     authors
     serializations
