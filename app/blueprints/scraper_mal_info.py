@@ -36,26 +36,41 @@ def output(data, filename):
 def scrape_agent(url):
     # result = {}
     user_agents = users_agents()
-    headers = {
-        'User-Agent': random.choice(user_agents), 
-        # "Accept": "text/html,application/xhtml+xml,application/xml,apllication/json;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        # "Accept-Language": "en-US,en;q=0.5",
-        # "Accept-Encoding": "gzip, deflate",
-        # "Connection": "keep-alive",
-        # "Upgrade-Insecure-Requests": "1",
-        # "Sec-Fetch-Dest": "document",
-        # "Sec-Fetch-Mode": "navigate",
-        # "Sec-Fetch-Site": "none",
-        # "Sec-Fetch-User": "?1",
-        # "Cache-Control": "max-age=0"
-        }
+    headers = {'User-Agent': random.choice(user_agents)}
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.content,"html.parser")
-    # href
-    # image
-    # title
-    # manga vol | ans | members
-    # score
+
+    """
+    manga_id
+    title
+    type
+    score
+    scored_by
+    status
+    volumes
+    chapters
+    start_date
+    end_date
+    members
+    favorites
+    sfw
+    approved
+    created_at_before
+    updated_at
+    real_start_date	real_end_date
+    genres
+    themes
+    demographics
+    authors
+    serializations
+    synopsis
+    background
+    main_picture
+    url	title_english
+    title_japanese
+    title_synonyms
+    """
+
     manga_details= {}
     
     data = soup.find_all("tr", class_="ranking-list")
